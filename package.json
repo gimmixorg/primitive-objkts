@@ -1,0 +1,23 @@
+{
+  "name": "primitive-objkts",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next"
+  },
+  "dependencies": {
+    "conseiljs": "^5.0.8-3",
+    "loglevel": "^1.7.1",
+    "next": "^10.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "swr": "^0.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.41",
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.4"
+  }
+}

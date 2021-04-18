@@ -40,7 +40,7 @@ const Frame = () => {
         />
         <meta
           name="twitter:image"
-          content="https://primitiv-eobjkts.gimmix.org/static/empty.jpg"
+          content="https://primitive-objkts.gimmix.org/static/empty.jpg"
         />
         <link
           rel="icon"

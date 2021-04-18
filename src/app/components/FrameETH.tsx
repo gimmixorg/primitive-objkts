@@ -23,6 +23,7 @@ const FrameETH = ({
   if (!nft) return null;
   return (
     <FrameGenericNFT
+      user={user}
       image={nft.image_url}
       name={nft.name}
       description={nft.description}

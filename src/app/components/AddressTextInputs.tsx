@@ -44,8 +44,9 @@ const AddressTextInputs = ({
             onChangeType={type => onChangeType(i, type)}
             updateName={name =>
               setAddresses(_addresses => {
-                _addresses[i].name = name;
-                return _addresses;
+                const addresses = [..._addresses];
+                addresses[i].name = name;
+                return addresses;
               })
             }
             onRemoveClick={() =>

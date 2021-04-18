@@ -7,9 +7,14 @@ const IndexPage = () => {
   const [addresses, setAddresses] = useState<AddressInputType[]>([
     {
       address: 'tz1gqaKjfQBhUMCE6LhbkpuittRiWv5Z6w38',
-      type: 'creations'
+      type: 'creations',
+      name: 'jjjjjjjjjjohn'
     },
-    { address: 'tz1iGcF8HVtYJpCFAsLX6nwYgQgDR162VNBi', type: 'creations' },
+    {
+      address: 'tz1iGcF8HVtYJpCFAsLX6nwYgQgDR162VNBi',
+      type: 'creations',
+      name: 'kyt'
+    },
     { address: 'tz1R4bLnuw5uwWLrvFV3vajbw2eBXb6MQ3F3', type: 'creations' },
     { address: 'tz1TxDL7npfYDSyvrZFC4deUPMySvsL6xARU', type: 'creations' }
   ]);
@@ -192,6 +197,7 @@ const IndexPage = () => {
           align-items: center;
           justify-content: center;
           border: 3px solid #333;
+          overflow-y: auto;
         }
         .iframe-wrapper {
           height: 384px;

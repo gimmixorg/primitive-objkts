@@ -1,15 +1,18 @@
 import useConfig from '@app/features/useConfig';
 import React from 'react';
+import { AddressInputType } from './AddressTextInputs';
 
 const FrameGenericNFT = ({
   image,
   name,
   description,
+  user,
   advanceToNext
 }: {
   image: string;
   name: string;
   description: string;
+  user: AddressInputType;
   advanceToNext: () => void;
 }) => {
   const { fill, metadata } = useConfig();
@@ -20,6 +23,22 @@ const FrameGenericNFT = ({
         <div className="meta">
           <div className="name">{name}</div>
           <div className="description">{description}</div>
+          <div className="user">
+            {user.type == 'collection' ? (
+              <>
+                In{' '}
+                {user.name ||
+                  `${user.address.slice(0, 6)}...${user.address.slice(-4)}`}
+                's collection
+              </>
+            ) : (
+              <>
+                Created by{' '}
+                {user.name ||
+                  `${user.address.slice(0, 6)}...${user.address.slice(-4)}`}
+              </>
+            )}
+          </div>
         </div>
       )}
       <style jsx>{`
@@ -59,6 +78,11 @@ const FrameGenericNFT = ({
           font-size: 18px;
           line-height: 1.5em;
           text-shadow: 0px 0px 4px rgba(0, 0, 0.1);
+          margin-bottom: 5px;
+        }
+        .user {
+          opacity: 0.7;
+          font-size: 18px;
         }
       `}</style>
     </div>

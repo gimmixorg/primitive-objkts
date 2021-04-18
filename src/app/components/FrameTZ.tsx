@@ -32,6 +32,7 @@ const FrameTZ = ({
   if (!nft) return null;
   return (
     <FrameGenericNFT
+      user={user}
       image={(!tryingAlt ? nft.artifactUri : nft.thumbnailUri).replace(
         'ipfs://',
         'https://cloudflare-ipfs.com/ipfs/'

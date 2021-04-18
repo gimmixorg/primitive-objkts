@@ -58,6 +58,13 @@ const MainLayout: FunctionComponent = ({ children }) => {
         <div></div>
       </header>
       <main>{children}</main>
+      <div className="mobile">
+        Get a live updating view of your NFT collection onto your digital frame,
+        or combine your friends and favorites into one big group frame to share.
+        <br />
+        <br />
+        View this page on desktop to create your own frame.
+      </div>
       <footer>
         <div>GIMMIX © MMXXI</div>
         <div>
@@ -152,6 +159,27 @@ const MainLayout: FunctionComponent = ({ children }) => {
         footer div:last-of-type {
           text-align: right;
           font-size: 14px;
+        }
+        .mobile {
+          display: none;
+        }
+        @media (max-width: 800px) {
+          .info-bar,
+          main {
+            display: none;
+          }
+          header {
+            top: 0;
+          }
+          .mobile {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: left;
+            margin: 0 auto;
+            font-size: 16px;
+          }
         }
       `}</style>
       <style jsx global>{`

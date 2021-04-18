@@ -61,7 +61,12 @@ const MainLayout: FunctionComponent = ({ children }) => {
       <footer>
         <div>GIMMIX © MMXXI</div>
         <div>
-          Free and Open Source
+          <a
+            href="https://github.com/gimmix-org/primitive-objkts"
+            target="_blank"
+          >
+            Free and Open Source
+          </a>
           <br />
           Not affiliated with or endorsed by Electric Objects or Hic Et Nunc.
         </div>
@@ -163,6 +168,9 @@ const MainLayout: FunctionComponent = ({ children }) => {
         }
         #__next {
           height: 100%;
+        }
+        a {
+          color: inherit;
         }
       `}</style>
     </div>

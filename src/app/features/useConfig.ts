@@ -7,6 +7,8 @@ type Config = {
   mode: 'ordered' | 'random';
   time: number;
   unit: 's' | 'm' | 'h';
+  fill: 'contain' | 'cover';
+  metadata: 'show' | 'hide';
 };
 
 const useConfig = (): Config => {
@@ -16,15 +18,17 @@ const useConfig = (): Config => {
       addresses: [],
       time: 0,
       mode: 'ordered',
-      unit: 'm'
+      unit: 'm',
+      fill: 'contain',
+      metadata: 'show'
     };
   const config: Config = JSON.parse(query.c as string);
-  let { addresses, mode, time, unit } = config;
+  let { addresses, mode, time, unit, fill, metadata } = config;
   addresses = addresses.filter(
     a => validateETH(a.address) || validateTZ(a.address)
   );
 
-  return { addresses, mode, time, unit };
+  return { addresses, mode, time, unit, fill, metadata };
 };
 
 export default useConfig;

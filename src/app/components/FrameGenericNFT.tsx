@@ -1,3 +1,4 @@
+import useConfig from '@app/features/useConfig';
 import React from 'react';
 
 const FrameGenericNFT = ({
@@ -11,13 +12,16 @@ const FrameGenericNFT = ({
   description: string;
   advanceToNext: () => void;
 }) => {
+  const { fill, metadata } = useConfig();
   return (
     <div className="nft">
       <img src={image} onError={advanceToNext} />
-      <div className="meta">
-        <div className="name">{name}</div>
-        <div className="description">{description}</div>
-      </div>
+      {metadata == 'show' && (
+        <div className="meta">
+          <div className="name">{name}</div>
+          <div className="description">{description}</div>
+        </div>
+      )}
       <style jsx>{`
         .nft {
           position: absolute;
@@ -34,9 +38,8 @@ const FrameGenericNFT = ({
         img {
           display: block;
           width: 100%;
-          height: auto;
-          max-height: 100%;
-          object-fit: contain;
+          height: 100%;
+          object-fit: ${fill};
         }
         .meta {
           position: fixed;

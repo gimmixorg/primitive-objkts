@@ -16,7 +16,9 @@ const IndexPage = () => {
   const [time, setTime] = useState<number>(10);
   const [unit, setUnit] = useState<'s' | 'm' | 'h'>('m');
   const [mode, setMode] = useState<'ordered' | 'random'>('ordered');
-  const config = { addresses, time, unit, mode };
+  const [metadata, setMetadata] = useState<'show' | 'hide'>('show');
+  const [fill, setFill] = useState<'contain' | 'cover'>('contain');
+  const config = { addresses, time, unit, mode, fill, metadata };
   return (
     <div className="index">
       <div className="left">
@@ -32,7 +34,7 @@ const IndexPage = () => {
         <AddressTextInputs addresses={addresses} setAddresses={setAddresses} />
         <div className="section-title">Customize</div>
         <div className="customize">
-          <div className="modes">
+          <div className="customize-section">
             <div className="customize-title">Loop mode</div>
             <div className="spacer"></div>
             <div className="modes">
@@ -50,7 +52,46 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <div className="timer">
+          <div className="customize-section">
+            <div className="customize-title">Display mode</div>
+            <div className="spacer"></div>
+            <div className="fills">
+              <div
+                onClick={() => setFill('contain')}
+                className={`fill ${fill == 'contain' ? 'selected' : ''}`}
+              >
+                Fit
+              </div>
+              <div
+                onClick={() => setFill('cover')}
+                className={`fill ${fill == 'cover' ? 'selected' : ''}`}
+              >
+                Fill
+              </div>
+            </div>
+          </div>
+          <div className="customize-section">
+            <div className="customize-title">Metadata</div>
+            <div className="text-options">
+              <div
+                className={`text-option ${
+                  metadata == 'show' ? 'selected' : ''
+                }`}
+                onClick={() => setMetadata('show')}
+              >
+                Show
+              </div>
+              <div
+                className={`text-option ${
+                  metadata == 'hide' ? 'selected' : ''
+                }`}
+                onClick={() => setMetadata('hide')}
+              >
+                Hide
+              </div>
+            </div>
+          </div>
+          <div className="customize-section">
             <div className="customize-title">Time per piece</div>
             <div className="spacer" />
             <input
@@ -153,8 +194,8 @@ const IndexPage = () => {
           border: 3px solid #333;
         }
         .iframe-wrapper {
-          height: 480px;
-          width: 270px;
+          height: 384px;
+          width: 216px;
           overflow: hidden;
           outline: 10px solid #333;
           background-color: black;
@@ -169,7 +210,7 @@ const IndexPage = () => {
           outline: none;
           height: 1920px;
           width: 1080px;
-          transform: scale(0.25);
+          transform: scale(0.2);
           transform-origin: top left;
         }
         .badge {
@@ -213,20 +254,23 @@ const IndexPage = () => {
           font-size: 14px;
           width: 120px;
         }
-        .timer {
+        .customize-section {
+          margin-bottom: 10px;
           display: flex;
           align-items: center;
-        }
-        .modes {
-          margin-bottom: 5px;
+          justify-content: space-between;
         }
         .units,
-        .modes {
+        .modes,
+        .fills,
+        .text-options {
           display: flex;
           align-items: center;
         }
         .unit,
-        .mode {
+        .mode,
+        .fill,
+        .text-option {
           margin-left: 5px;
           background-color: #f1f1f1;
           border: 1px solid #ccc;
@@ -238,7 +282,9 @@ const IndexPage = () => {
           cursor: pointer;
         }
         .unit.selected,
-        .mode.selected {
+        .mode.selected,
+        .fill.selected,
+        .text-option.selected {
           background-color: black;
           border-color: black;
           color: white;

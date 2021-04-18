@@ -38,11 +38,11 @@ const Frame = () => {
         />
         <meta
           name="twitter:image"
-          content="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+          content="https://primitiv-eobjkts.gimmix.org/static/empty.jpg"
         />
         <link
           rel="icon"
-          href="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+          href="https://primitive-objkts.gimmix.org/static/empty.jpg"
         />
       </Head>
       {addresses.length == 0 && <div className="empty"></div>}

@@ -25,11 +25,11 @@ const MainLayout: FunctionComponent = ({ children }) => {
         />
         <meta
           name="twitter:image"
-          content="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+          content="https://primitive-objkts.gimmix.org/static/empty.jpg"
         />
         <link
           rel="icon"
-          href="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+          href="https://primitive-objkts.gimmix.org/static/empty.jpg"
         />
       </Head>
       <div className="info-bar">

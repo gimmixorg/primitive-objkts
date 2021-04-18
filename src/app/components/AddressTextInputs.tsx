@@ -35,28 +35,30 @@ const AddressTextInputs = ({
   }, [text]);
   return (
     <>
-      <div className="addresses">
-        {addresses.map((address, i) => (
-          <AddressPreview
-            key={i}
-            number={i + 1}
-            user={address}
-            onChangeType={type => onChangeType(i, type)}
-            updateName={name =>
-              setAddresses(_addresses => {
-                const addresses = [..._addresses];
-                addresses[i].name = name;
-                return addresses;
-              })
-            }
-            onRemoveClick={() =>
-              setAddresses(_addresses =>
-                _addresses.filter(_address => _address != address)
-              )
-            }
-          />
-        ))}
-      </div>
+      {addresses.length > 0 && (
+        <div className="addresses">
+          {addresses.map((address, i) => (
+            <AddressPreview
+              key={i}
+              number={i + 1}
+              user={address}
+              onChangeType={type => onChangeType(i, type)}
+              updateName={name =>
+                setAddresses(_addresses => {
+                  const addresses = [..._addresses];
+                  addresses[i].name = name;
+                  return addresses;
+                })
+              }
+              onRemoveClick={() =>
+                setAddresses(_addresses =>
+                  _addresses.filter(_address => _address != address)
+                )
+              }
+            />
+          ))}
+        </div>
+      )}
       {addresses.length < 10 && (
         <form onSubmit={onAddAddress}>
           <input
@@ -72,7 +74,9 @@ const AddressTextInputs = ({
         </form>
       )}
       <style jsx>{`
-        .address-text-area {
+        .addresses {
+          margin-bottom: 10px;
+          border-bottom: 1px solid #ccc;
         }
         input {
           width: 100%;

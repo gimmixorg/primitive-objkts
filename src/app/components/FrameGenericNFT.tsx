@@ -84,6 +84,18 @@ const FrameGenericNFT = ({
           opacity: 0.7;
           font-size: 18px;
         }
+        @media (max-width: 768px) {
+          .meta {
+            padding: 15px;
+          }
+          .name {
+            font-size: 18px;
+          }
+          .desceription,
+          .user {
+            font-size: 14px;
+          }
+        }
       `}</style>
     </div>
   );

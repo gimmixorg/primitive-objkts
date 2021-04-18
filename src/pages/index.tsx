@@ -33,12 +33,20 @@ const IndexPage = () => {
           frame, or combine your friends and favorites into one big group frame
           to share.
         </div>
+        <div className="mobile">
+          Open this page in a desktop browser to create your frame.
+        </div>
         <div className="description">
           Enter up to 10 wallet addresses (Ethereum or Tezos).
         </div>
-        <AddressTextInputs addresses={addresses} setAddresses={setAddresses} />
-        <div className="section-title">Customize</div>
+        <div className="addresses">
+          <AddressTextInputs
+            addresses={addresses}
+            setAddresses={setAddresses}
+          />
+        </div>
         <div className="customize">
+          <div className="section-title">Customize</div>
           <div className="customize-section">
             <div className="customize-title">Loop mode</div>
             <div className="spacer"></div>
@@ -314,12 +322,41 @@ const IndexPage = () => {
         .spacer {
           flex: 1 1 auto;
         }
+        .mobile {
+          display: none;
+        }
         @media (max-width: 768px) {
           .index {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
           }
           .left {
-            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          }
+          .title {
+            font-size: 16px;
+          }
+          .right,
+          .description,
+          .addresses,
+          .badge,
+          .customize {
+            display: none;
+          }
+          .mobile {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol';
+            line-height: 1.5em;
           }
         }
       `}</style>

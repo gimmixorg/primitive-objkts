@@ -6,7 +6,7 @@ const MainLayout: FunctionComponent = ({ children }) => {
   return (
     <div className="main-layout">
       <Head>
-        <title>🂠 PRIMITVE OBJKTS</title>
+        <title>PRIMITVE OBJKTS</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
@@ -52,7 +52,7 @@ const MainLayout: FunctionComponent = ({ children }) => {
       <header>
         <div>
           <Link href="/">
-            <a className="factory">🂠 PRIMITIVE OBJKTS</a>
+            <a className="factory">PRIMITIVE OBJKTS</a>
           </Link>
         </div>
         <div></div>

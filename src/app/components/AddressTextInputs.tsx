@@ -1,4 +1,4 @@
-import { validateTZ, validateETH } from '@app/features/useAddresses';
+import { validateETH, validateTZ } from '@app/features/validators';
 import React, { FormEventHandler, useEffect, useState } from 'react';
 import AddressPreview from './AddressPreview';
 

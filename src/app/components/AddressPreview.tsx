@@ -1,7 +1,7 @@
-import { validateETH } from '@app/features/useAddresses';
 import React, { useState } from 'react';
 import { AddressInputType } from './AddressTextInputs';
 import { FaMinus, FaUserAlt } from 'react-icons/fa';
+import { validateETH } from '@app/features/validators';
 const AddressPreview = ({
   number,
   user,

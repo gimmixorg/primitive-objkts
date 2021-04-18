@@ -15,8 +15,12 @@ const IndexPage = () => {
       type: 'creations',
       name: 'kyt'
     },
-    { address: 'tz1R4bLnuw5uwWLrvFV3vajbw2eBXb6MQ3F3', type: 'creations' },
-    { address: 'tz1TxDL7npfYDSyvrZFC4deUPMySvsL6xARU', type: 'creations' }
+    {
+      address: '0xcda72070e455bb31c7690a170224ce43623d0b6f',
+      type: 'collection',
+      name: 'Foundation'
+    },
+    { address: 'tz1cHVbttfksw95gn51fdxdra4Zbqe36LspP', type: 'creations' }
   ]);
   const [time, setTime] = useState<number>(10);
   const [unit, setUnit] = useState<'s' | 'm' | 'h'>('m');

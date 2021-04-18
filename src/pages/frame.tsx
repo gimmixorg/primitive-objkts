@@ -16,12 +16,33 @@ const Frame = () => {
   return (
     <div className="frame">
       <Head>
-        <title>PRIMITIVE OBJKTS</title>
+        <title>
+          Art from {addresses.map(a => a.name || a.address).join(', ')}
+        </title>
         <meta name="robots" content="noindex" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
           rel="stylesheet"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content={`Art from {addresses.map(a => a.name || a.address).join(', ')}`}
+        />
+        <meta
+          name="twitter:description"
+          content="Get a live updating view of your NFT collection onto your digital
+          frame, or combine your friends and favorites into one big group frame
+          to share.."
+        />
+        <meta
+          name="twitter:image"
+          content="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+        />
+        <link
+          rel="icon"
+          href="https://primitiveobjkts.gimmix.org/static/empty.jpg"
         />
       </Head>
       {addresses.length == 0 && <div className="empty"></div>}

@@ -12,6 +12,25 @@ const MainLayout: FunctionComponent = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          name="twitter:title"
+          content="PRIMITIVE OBJKTS: Hic et nunc and Ethereum art on your digital frame."
+        />
+        <meta
+          name="twitter:description"
+          content="Get a live updating view of your NFT collection onto your digital
+          frame, or combine your friends and favorites into one big group frame
+          to share.."
+        />
+        <meta
+          name="twitter:image"
+          content="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+        />
+        <link
+          rel="icon"
+          href="https://primitiveobjkts.gimmix.org/static/empty.jpg"
+        />
       </Head>
       <div className="info-bar">
         WORKS WITH{' '}

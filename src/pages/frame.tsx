@@ -28,7 +28,9 @@ const Frame = () => {
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
-          content={`Art from {addresses.map(a => a.name || a.address).join(', ')}`}
+          content={`Art from ${addresses
+            .map(a => a.name || a.address)
+            .join(', ')}`}
         />
         <meta
           name="twitter:description"
